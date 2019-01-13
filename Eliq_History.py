@@ -51,4 +51,4 @@ while true:
     acumaltive_used_energy_per_day= 0
     energy_used_per_hour = 0
     energy_data=[]
-    time.sleep(10)
+    time.sleep(3600)
