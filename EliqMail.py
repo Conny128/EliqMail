@@ -33,14 +33,18 @@ print ('Total power is  {} Watts so far today'.format(acumaltive_used_energy_per
 acumaltive_used_energy_per_day_int = int(acumaltive_used_energy_per_day)
 acumaltive_used_energy_per_day_str = str (acumaltive_used_energy_per_day_int)
 
-if present_hour-1 > 7 and present_hour-1 < 23: # Only mail between 7 AM to 23 PM
-    message = """\
-    Energy used so far {} Watts : Hour {} """.format(acumaltive_used_energy_per_day_str, present_hour-1 )    
-    
-    context = ssl.create_default_context()
-    with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
-        server.login(sender_email, password)
-        server.sendmail(sender_email, receiver_email, message)
+message = """\
+
+
+Energy used so far {} Watts : Hour {}
+
+
+Sent from Stg82""".format(acumaltive_used_energy_per_day_str, present_hour-1 )    
+
+context = ssl.create_default_context()
+with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
+    server.login(sender_email, password)
+    server.sendmail(sender_email, receiver_email, message)
 
 acumaltive_used_energy_per_day_int= 0
 acumaltive_used_energy_per_day= 0
