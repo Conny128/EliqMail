@@ -2,17 +2,16 @@ import requests
 import smtplib, ssl
 from datetime import datetime
 
+
 port = 465  # For SSL
 smtp_server = "smtp.gmail.com"
 sender_email = "mymail@gmail.com"  # Enter your address
 receiver_email = "mymail@gmail.com"  # Enter receiver address
-password = "password" # Enter password
-accesstoken = "Accesstoken" #Enter Accesstoken
+password = "passwd" #Enter password
+accesstoken = "xxxxxx"
 energy_data=[]
 
 acumaltive_used_energy_per_day= 0.0
-Eliq_start_date= datetime.now().strftime('%Y-%m-%d')
-true = 1
 
 Eliq_start_date= datetime.now().strftime('%Y-%m-%d')
  
@@ -36,10 +35,10 @@ acumaltive_used_energy_per_day_str = str (acumaltive_used_energy_per_day_int)
 message = """\
 
 
-Energy used so far {} Watts : Hour {}
+Energy used so far {} Watts until Hour {}.00 (Last hour : {})
 
 
-Sent from Stg82""".format(acumaltive_used_energy_per_day_str, present_hour-1 )    
+Sent from XXXX""".format(acumaltive_used_energy_per_day_str, present_hour, int (energy_used_per_hour ))    
 
 context = ssl.create_default_context()
 with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
