@@ -1,4 +1,6 @@
 # EliqMail
 
-This program sends you an email every hour with energy consumption used so during the day and energy consumption last hour.
+This program sends you an email energy consumption used so during the day and energy consumption last hour.
+
+It is supposed to be run with crontab.
 

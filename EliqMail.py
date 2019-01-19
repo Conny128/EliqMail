@@ -35,7 +35,7 @@ acumaltive_used_energy_per_day_str = str (acumaltive_used_energy_per_day_int)
 message = """\
 
 
-Energy used so far {} Watts until Hour {}.00 (Last hour : {})
+Energy used so far {} Wh until Hour {}.00 (Last hour : {} Wh)
 
 
 Sent from XXXX""".format(acumaltive_used_energy_per_day_str, present_hour, int (energy_used_per_hour ))    
